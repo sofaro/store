@@ -10,14 +10,14 @@ const staticAssets = [
 
 self.addEventListener("install", async event => {
     const cache = await caches.open(staticCacheName);
-    await  cache.addAll(staticAssets);
+    await cache.addAll(staticAssets);
     console.log("Service worker has been installed");
 })
 
 self.addEventListener("activate", async event => {
-    const cachesKeys=await  caches.keys();
-    const checkKeys = cachesKeys.map(async key=>{
-        if(staticCacheName !==key){
+    const cachesKeys = await caches.keys();
+    const checkKeys = cachesKeys.map(async key => {
+        if (staticCacheName !== key) {
             await caches.delete(key)
         }
     });
@@ -27,7 +27,9 @@ self.addEventListener("activate", async event => {
 
 self.addEventListener("fetch", event => {
     console.log(`Trying to fetch ${event.request.url}`);
-    event.respondWith(caches.match(event.request).then(cachedResponse=>{
+    event.respondWith(caches.match(event.request).then(cachedResponse => {
         return cachedResponse || fetch(event.request)
     }))
 })
+
+self.VERSION = staticCacheName;
