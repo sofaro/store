@@ -1,7 +1,7 @@
 const staticCacheName = "static-cache-v02";
 
 const staticAssets = [
-    "./logo512.png",
+    "./logo192.png",
     "./favicon.ico",
     "./telegram-web-app.js",
     "./static/js/main.56b6cfb5.js",
