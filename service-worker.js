@@ -4,8 +4,8 @@ const staticAssets = [
     "./logo192.png",
     "./favicon.ico",
     "./telegram-web-app.js",
-    "./static/js/main.bc82fbd3.js",
-    "./static/css/main.647f0e6c.css"
+    "./static/js/main.936dc787.js",
+    "./static/css/main.ea3218e2.css"
 ]
 
 self.addEventListener("install", async event => {
