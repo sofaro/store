@@ -4,8 +4,8 @@ const staticAssets = [
     "./logo192.png",
     "./favicon.ico",
     "./telegram-web-app.js",
-    "./static/js/main.94a91bdc.js",
-    "./static/css/main.346309b0.css"
+    "./static/js/main.a28a33ee.js",
+    "./static/css/main.1bfd304c.css"
 ]
 self.addEventListener("install", async event => {
     const cache = await caches.open(staticCacheName);
