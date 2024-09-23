@@ -1,4 +1,4 @@
-const staticCacheName = "static-cache-v05";
+const staticCacheName = "static-cache-v06";
 
 const staticAssets = [
     "./logo192.png",
@@ -26,33 +26,9 @@ self.addEventListener("activate", async event => {
 
 self.addEventListener("fetch", event => {
     console.log(`Trying to fetch ${event.request.url}`);
-    event.respondWith(
-        caches.match(event.request)
-            .then(cachedResponse => {
-                // Return cached response if available
-                if (cachedResponse) {
-                    return cachedResponse;
-                }
-
-                // If not in cache, try to fetch from network
-                return fetch(event.request)
-                    .then(networkResponse => {
-                        // Check if the response is valid
-                        if (!networkResponse.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return networkResponse;
-                    })
-                    .catch(error => {
-                        console.error('Fetch failed; returning offline message.', error);
-                        // Return a custom message if there's an error
-                        return new Response("No new data available", {
-                            status: 404,
-                            statusText: "Not Found"
-                        });
-                    });
-            })
-    );
+    event.respondWith(caches.match(event.request).then(cachedResponse => {
+        return cachedResponse || fetch(event.request)
+    }))
 })
 
 self.VERSION = staticCacheName;
