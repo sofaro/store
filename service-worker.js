@@ -1,12 +1,12 @@
-const staticCacheName = "static-cache-v00";
+const staticCacheName = "static-cache-v01";
 
 const staticAssets = [
     "./index.html", // Ensure index.html is cached
     "./logo192.png",
     "./favicon.ico",
     "./telegram-web-app.js",
-    "./static/js/main.4f6d19e7.js",
-    "./static/css/main.eee89655.css"
+    "./static/js/main.73073b7e.js",
+    "./static/css/main.83a4e228.css"
 ];
 
 self.addEventListener("install", async event => {
