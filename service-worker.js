@@ -1,11 +1,11 @@
-const staticCacheName = "static-cache-v05";
+const staticCacheName = "static-cache-v06";
 
 const staticAssets = [
     "./index.html",
     "./logo192.png",
     "./favicon.ico",
     "./telegram-web-app.js",
-    "./static/js/main.74e6dd7b.js",
+    "./static/js/main.d7c8769d.js",
     "./static/css/main.29a024ce.css"
 ];
 
